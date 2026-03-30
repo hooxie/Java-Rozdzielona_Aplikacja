@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-movies
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-movies
+  template:
+    metadata:
+      labels:
+        app: ms-movies
+    spec:
+      containers:
+        - image: ms-movies
+          name: ms-movies
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+
+status: { }
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-movies
+  namespace: default
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: ms-movies
+  type: LoadBalancer
+status:
+  loadBalancer: { }
+
+---

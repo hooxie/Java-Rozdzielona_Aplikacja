@@ -1,0 +1,7 @@
+ms\movies\model\Movie.class
+ms\movies\dao\DirectorRepository.class
+ms\movies\model\Director.class
+ms\movies\MoviesApplication.class
+ms\movies\web\MoviesRest.class
+ms\movies\dao\MovieRepository.class
+ms\movies\security\VodSecurityConfig.class

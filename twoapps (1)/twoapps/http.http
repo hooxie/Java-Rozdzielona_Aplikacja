@@ -1,0 +1,19 @@
+### 1. Pobranie wszystkich kin
+# Oczekiwany wynik: Lista kin, gdzie każde kino ma wypełnioną listę "movieNames" (tytuły pobrane z serwisu ms-movies)
+GET http://localhost:8070/webapi/cinemas
+Accept: application/json
+
+### 2. Pobranie kin, które grają konkretny film (np. film o ID 1)
+# Oczekiwany wynik: Lista kin przypisanych do filmu o ID 1, wraz z nazwami wszystkich filmów granymi w tych kinach
+GET http://localhost:8070/webapi/movies/1/cinemas
+Accept: application/json
+
+### 3. Pobranie szczegółów filmu (bezpośrednio z ms-movies - węzeł 1)
+# Weryfikacja, czy pierwszy kontener z ms-movies odpowiada poprawnie
+GET http://localhost:8090/webapi/movies/1
+Accept: application/json
+
+### 4. Pobranie szczegółów filmu (bezpośrednio z ms-movies - węzeł 2)
+# Weryfikacja, czy drugi kontener z ms-movies odpowiada poprawnie
+GET http://localhost:8091/webapi/movies/1
+Accept: application/json
